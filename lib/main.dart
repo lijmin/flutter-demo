@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/route/route_config.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
+import 'config/color.dart';
+import 'config/theme.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +18,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       showSemanticsDebugger: false,
       theme: ThemeData(
-        primarySwatch: Colors.cyan,
+        appBarTheme: MyTheme.appBarTheme,
+        textTheme: MyTheme.textTheme,
+        textButtonTheme: MyTheme.textButtonTheme,
+        outlinedButtonTheme: MyTheme.outlinedButtonTheme,
+        dividerTheme: MyTheme.dividerTheme,
+        tabBarTheme: MyTheme.tabBarTheme,
+        backgroundColor: MyColor.bg,
       ),
       initialRoute: MyRoute.home,
       getPages: MyRoute.getPages,
