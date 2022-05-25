@@ -5,7 +5,7 @@ import 'dimen.dart';
 class MyTheme {
   static TextTheme textTheme = const TextTheme(
     titleLarge: TextStyle(color: MyColor.text33, fontSize: MyDimen.textSizeL),
-    titleMedium: TextStyle(color: MyColor.text66, fontSize: MyDimen.textSizeM),
+    bodyMedium: TextStyle(color: MyColor.text66, fontSize: MyDimen.textSizeM),
     titleSmall: TextStyle(color: MyColor.text99, fontSize: MyDimen.textSizeS),
   );
 

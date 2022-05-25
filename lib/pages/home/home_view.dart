@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'logic.dart';
+import 'home_logic.dart';
 
 class HomePage extends StatelessWidget {
   final logic = Get.put(HomeLogic());
@@ -23,9 +23,9 @@ class HomePage extends StatelessWidget {
             logic.onNavigationSelect(index);
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "首页"),
-            BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "布局"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "我的")
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "widgets"),
+            BottomNavigationBarItem(icon: Icon(Icons.widgets), label: "servers"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "settings")
           ],
         ),
       );
