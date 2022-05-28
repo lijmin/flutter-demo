@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../config/color.dart';
 import 'icon_logic.dart';
 
 class IconPage extends StatelessWidget {
@@ -18,27 +19,56 @@ class IconPage extends StatelessWidget {
       body: Wrap(
         children: [
           _itemWidget(
-            "imageIcon",
-            Icon(Icons.add),
+            "materialIcon",
+            const Icon(
+              Icons.add,
+              color: Colors.green,
+            ),
           ),
           _itemWidget(
-            "imageIcon",
-            Icon(Icons.add),
+            "textIcon",
+            const Text(
+              "\ue6df",
+              style: TextStyle(
+                fontFamily: "aliIcon",
+                fontSize: 24,
+                color: Colors.green,
+              ),
+            ),
+          ),
+          _itemWidget(
+            "aliIcon",
+            const Icon(
+              IconData(0xe6df, fontFamily: 'aliIcon'),
+              color: MyColor.primary,
+            ),
+          ),
+          _itemWidget(
+            "iconButton",
+            IconButton(
+              padding: EdgeInsets.zero,
+              iconSize: 24,
+              onPressed: () => Get.snackbar('Hi', 'i am a IconButton'),
+              icon: const Icon(
+                IconData(0xe6df, fontFamily: 'aliIcon'),
+                color: MyColor.primary,
+              ),
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _itemWidget(String text, Icon icon) {
+  Widget _itemWidget(String text, Widget icon) {
     return Container(
       padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
       child: Row(
-        children: const [
-          Icon(Icons.home),
+        children: [
+          icon,
           Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: Text("data"),
+            padding: const EdgeInsets.only(left: 8),
+            child: Text(text),
           ),
         ],
       ),
